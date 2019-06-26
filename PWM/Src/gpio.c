@@ -75,6 +75,10 @@ void MX_GPIO_Init(void)
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, GPIO_PIN_SET);
+	
+		
+	/* Configure GPIO pin Output Level */
+	HAL_GPIO_WritePin(POWER_OUT1_GPIO_PORT,POWER_OUT1_Pin,GPIO_PIN_SET);
 
   /*Configure GPIO pin : PtPin */
   GPIO_InitStruct.Pin = LED_RED_Pin;
@@ -89,7 +93,12 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(LED_GREEN_GPIO_Port, &GPIO_InitStruct);
-
+	/*Configure GPIO pins : PHPin PHPin PHPin PHPin */
+  GPIO_InitStruct.Pin = POWER_OUT1_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+	HAL_GPIO_Init(POWER_OUT1_GPIO_PORT, &GPIO_InitStruct);
 }
 
 /* USER CODE BEGIN 2 */
@@ -100,6 +109,11 @@ void led_off(void)
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, GPIO_PIN_SET);
+}
+
+void power1_on(void)
+{
+	HAL_GPIO_WritePin(POWER_OUT1_GPIO_PORT,POWER_OUT1_Pin,GPIO_PIN_SET);
 }
 /* USER CODE END 2 */
 

@@ -109,6 +109,9 @@ int main(void)
   MX_TIM8_Init();
   /* USER CODE BEGIN 2 */
 	led_off();
+	
+	power1_on();
+
 	/* Open 4 sets of PWM waves respectively */
 		/**TIM2 GPIO Configuration    
 	PA1     ------> TIM2_CH2
@@ -160,11 +163,17 @@ int main(void)
 	
 	
 	PWM_SetDuty(&htim8,TIM_CHANNEL_1,0.10);
-	PWM_SetDuty(&htim8,TIM_CHANNEL_2,0.20);
-	PWM_SetDuty(&htim8,TIM_CHANNEL_3,0.30);
-	PWM_SetDuty(&htim8,TIM_CHANNEL_4,0.40);
-  /* USER CODE END 2 */
-
+	//PWM_SetDuty(&htim8,TIM_CHANNEL_2,0.20);
+	//PWM_SetDuty(&htim8,TIM_CHANNEL_3,0.30);
+	//PWM_SetDuty(&htim8,TIM_CHANNEL_4,0.40);
+	
+	HAL_Delay(2000);
+	PWM_SetDuty(&htim8,TIM_CHANNEL_1,0.05);
+  HAL_Delay(2500);
+	
+	PWM_SetDuty(&htim8,TIM_CHANNEL_1,0.06);
+	/* USER CODE END 2 */
+	//PWM_SetDuty(&htim8,TIM_CHANNEL_1,0.80);
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
@@ -172,8 +181,10 @@ int main(void)
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
+		//PWM_SetDuty(&htim8,TIM_CHANNEL_1,0.06);
 		HAL_GPIO_TogglePin(GPIOF, LED_GREEN_Pin);
 		HAL_Delay(500);
+		
   }
   /* USER CODE END 3 */
 

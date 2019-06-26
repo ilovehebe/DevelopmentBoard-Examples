@@ -61,6 +61,9 @@
 #define LED_GREEN_Pin GPIO_PIN_14
 #define LED_GREEN_GPIO_Port GPIOF
 
+#define POWER_OUT1_Pin GPIO_PIN_2
+#define POWER_OUT1_GPIO_PORT GPIOH
+
 /* ########################## Assert Selection ############################## */
 /**
   * @brief Uncomment the line below to expanse the "assert_param" macro in the 

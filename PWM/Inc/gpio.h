@@ -60,6 +60,7 @@ void MX_GPIO_Init(void);
 
 /* USER CODE BEGIN Prototypes */
 void led_off(void);
+void power1_on(void);
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus
